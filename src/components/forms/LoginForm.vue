@@ -1,0 +1,47 @@
+<template>
+  <Form @submit.prevent="handleLogin">
+    <h1 class="text-lg underline decoration-wavy underline-offset-4">
+      Login
+    </h1>
+    <input
+      id="email"
+      v-model="form.email" required class="
+        w-full rounded-xs px-2 outline outline-offset-2 outline-indigo-200
+      " type="text" name="email" placeholder="E-mail"
+    >
+    <input
+      id="password"
+      v-model="form.password" required class="
+        w-full rounded-xs px-2 outline outline-offset-2 outline-indigo-200
+      " type="password" name="password" placeholder="Password"
+    >
+    <button
+      class="
+        cursor-pointer rounded-sm bg-indigo-600 p-2 shadow
+        hover:bg-indigo-400 hover:text-indigo-100
+      "
+    >
+      Login
+    </button>
+  </Form>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import Form from '@/components/ui/Form.vue'
+import useAuth from '@/composables/useAuth'
+
+const emit = defineEmits(['submit'])
+
+const { postLogin } = useAuth()
+
+const form = ref({
+  email: '',
+  password: '',
+})
+
+async function handleLogin() {
+  await postLogin(form.value)
+  emit('submit')
+}
+</script>

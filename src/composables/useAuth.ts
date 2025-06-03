@@ -2,7 +2,11 @@ import { ref } from 'vue'
 
 export interface PostLoginPayload {
   email: string
-  password: string // This will be hashed by the backend code.
+  password: string
+}
+
+export interface PostRegisterPayload extends PostLoginPayload {
+  name: string
 }
 
 export interface PostLoginResponse {
@@ -11,9 +15,10 @@ export interface PostLoginResponse {
   token: string
 }
 
-export default function useAuth() {
-  const isAuthenticated = ref<boolean | null>(null)
+// Global value. This is shared between all composable calls.
+const isAuthenticated = ref<boolean | null>(null)
 
+export default function useAuth() {
   async function postLogin(payload: PostLoginPayload) {
     try {
       const response = await fetch('http://localhost:3000/auth/login', {
@@ -39,6 +44,33 @@ export default function useAuth() {
     }
   }
 
+  async function postRegister(payload: PostRegisterPayload) {
+    try {
+      const response = await fetch('http://localhost:3000/user/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: payload.name,
+          email: payload.email,
+          password: payload.password,
+        }),
+      })
+
+      if (response.ok) {
+        return true
+      }
+      else {
+        return false
+      }
+    }
+    catch (error) {
+      console.error('Error during registration:', error)
+      isAuthenticated.value = false
+    }
+  }
+
   async function heartbeat() {
     try {
       const response = await fetch('http://localhost:3000/users/hello', {
@@ -56,5 +88,5 @@ export default function useAuth() {
     }
   }
 
-  return { postLogin, heartbeat, isAuthenticated }
+  return { postLogin, postRegister, heartbeat, isAuthenticated }
 }

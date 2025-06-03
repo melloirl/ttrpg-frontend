@@ -2,37 +2,10 @@
   <main
     class="flex h-screen flex-col items-center justify-center gap-16 px-14"
   >
-    <form
-      class="
-        flex w-[500px] flex-col items-center justify-center gap-4 rounded-sm
-        border bg-gray-900 px-8 py-4 text-sky-200
-      "
-      @submit.prevent="handleLogin"
-    >
-      <h1 class="text-lg underline decoration-wavy underline-offset-4">
-        Login
-      </h1>
-      <input
-        id="email"
-        v-model="form.email" required class="
-          w-full rounded-xs px-2 outline outline-offset-2 outline-sky-200
-        " type="text" name="email" placeholder="E-mail"
-      >
-      <input
-        id="password"
-        v-model="form.password" required class="
-          w-full rounded-xs px-2 outline outline-offset-2 outline-sky-200
-        " type="password" name="password" placeholder="Password"
-      >
-      <button
-        class="
-          cursor-pointer rounded-sm bg-sky-600 p-2 shadow
-          hover:bg-sky-400 hover:text-sky-100
-        "
-      >
-        Login
-      </button>
-    </form>
+    <div class="flex items-center gap-8">
+      <LoginForm @submit="handleFeedback" />
+      <RegisterForm @submit="handleFeedback" />
+    </div>
     <Transition enter-from-class="transform-translate-x-[20px]" enter-to-class="transform-translate-x-[20px]">
       <p
         v-if="isAuthenticated !== null && showFeedback"
@@ -47,8 +20,8 @@
     <div class="flex flex-col gap-2">
       <button
         class="
-          cursor-pointer rounded-sm bg-sky-600 p-2 text-sky-100 shadow
-          hover:bg-sky-400
+          cursor-pointer rounded-sm bg-indigo-600 p-2 text-indigo-100 shadow
+          hover:bg-indigo-400
         "
         @click="handleHeartbeat"
       >
@@ -78,26 +51,22 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import LoginForm from '@/components/forms/LoginForm.vue'
+import RegisterForm from '@/components/forms/RegisterForm.vue'
 import useAuth from '@/composables/useAuth'
 
-const { postLogin, isAuthenticated, heartbeat } = useAuth()
-
-const form = ref({
-  email: '',
-  password: '',
-})
+const { isAuthenticated, heartbeat } = useAuth()
 
 const showFeedback = ref(false)
 const heartbeatMessage = ref('Heartbeat not yet triggered')
 
-function clearFeedback() {
-  showFeedback.value = false
-}
-
-async function handleLogin() {
-  await postLogin(form.value)
+function handleFeedback() {
   showFeedback.value = true
   setTimeout(clearFeedback, 3000)
+}
+
+function clearFeedback() {
+  showFeedback.value = false
 }
 
 async function handleHeartbeat() {

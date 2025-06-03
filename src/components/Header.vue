@@ -14,18 +14,18 @@
         <img :src="Logo" alt="Logo" class="h-8">
         <p
           class="
-            font-grover bg-gradient-to-b from-[#3F2481] to-[#AB1C4D]
-            bg-clip-text text-3xl font-bold text-transparent
+            font-grover from-moss-500 to-lich-900 bg-gradient-to-b bg-clip-text
+            text-3xl font-bold text-transparent
           "
         >
           Philactery
         </p>
       </div>
       <nav>
-        <ul class="flex items-center justify-center gap-4 text-sky-200">
+        <ul class="flex items-center justify-center gap-4 text-indigo-200">
           <li v-for="(link, key) in navigationLinks" :key="key">
             <RouterLink
-              :to="toRouterObject(link.name)"
+              :to="{ name: link.name }"
               class="hover:text-white"
             >
               {{ link.label }}
@@ -45,11 +45,5 @@ import Routes from '@/enums/routes'
 const navigationLinks = {
   home: { name: Routes.HOME, label: 'Home' },
   about: { name: Routes.ABOUT, label: 'About' },
-}
-
-function toRouterObject(name: string) {
-  return {
-    name,
-  }
 }
 </script>
