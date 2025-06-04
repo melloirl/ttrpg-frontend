@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-moss-950 fixed inset-x-0 top-0 z-10 border-b border-white/10"
+    class="bg-moss-950/50 fixed inset-x-0 top-0 z-10 border-b border-white/10"
   >
     <div
       class="
@@ -28,7 +28,11 @@
         </RouterLink>
       </div>
       <nav>
-        <ul class="text-moss-400 flex items-center justify-center gap-4">
+        <ul
+          v-if="Object.keys(navigationLinks).length > 0" class="
+            text-moss-400 flex items-center justify-center gap-4
+          "
+        >
           <li v-for="(link, key) in navigationLinks" :key="key">
             <RouterLink
               :to="{ name: link.name }"
@@ -48,8 +52,15 @@ import { Icon } from '@iconify/vue'
 import { RouterLink } from 'vue-router'
 import Routes from '@/enums/routes'
 
-const navigationLinks = {
-  // home: { name: Routes.HOME, label: 'Home' },
-  // about: { name: Routes.ABOUT, label: 'About' },
+interface NavigationLinks {
+  [key: string]: {
+    name: Routes
+    label: string
+  }
+}
+
+const navigationLinks: NavigationLinks = {
+  home: { name: Routes.HOME, label: 'Home' },
+  about: { name: Routes.ABOUT, label: 'About' },
 }
 </script>
