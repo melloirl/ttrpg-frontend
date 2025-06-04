@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed inset-x-0 top-0 z-10 border-b border-white/10"
+    class="bg-moss-950 fixed inset-x-0 top-0 z-10 border-b border-white/10"
   >
     <div
       class="
@@ -9,24 +9,30 @@
       "
     >
       <div
-        class="flex h-14 items-center gap-8"
+        class="flex h-16 items-center gap-8"
       >
-        <img :src="Logo" alt="Logo" class="h-8">
-        <p
-          class="
-            font-grover from-moss-500 to-lich-900 bg-gradient-to-b bg-clip-text
-            text-3xl font-bold text-transparent
-          "
-        >
-          Philactery
-        </p>
+        <RouterLink :to="{ name: Routes.HOME }">
+          <div class="flex items-center gap-2">
+            <p
+              class="font-wdxl text-lich-700 text-3xl"
+            >
+              Philactery
+            </p>
+            <Icon
+              icon="game-icons:warlock-eye"
+              class="text-lich-700"
+              width="32"
+              height="32"
+            />
+          </div>
+        </RouterLink>
       </div>
       <nav>
-        <ul class="flex items-center justify-center gap-4 text-indigo-200">
+        <ul class="text-moss-400 flex items-center justify-center gap-4">
           <li v-for="(link, key) in navigationLinks" :key="key">
             <RouterLink
               :to="{ name: link.name }"
-              class="hover:text-white"
+              class="hover:text-moss-200"
             >
               {{ link.label }}
             </RouterLink>
@@ -38,12 +44,12 @@
 </template>
 
 <script setup lang="ts">
+import { Icon } from '@iconify/vue'
 import { RouterLink } from 'vue-router'
-import Logo from '@/assets/phil.svg'
 import Routes from '@/enums/routes'
 
 const navigationLinks = {
-  home: { name: Routes.HOME, label: 'Home' },
-  about: { name: Routes.ABOUT, label: 'About' },
+  // home: { name: Routes.HOME, label: 'Home' },
+  // about: { name: Routes.ABOUT, label: 'About' },
 }
 </script>

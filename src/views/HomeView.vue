@@ -1,80 +1,44 @@
 <template>
   <main
-    class="flex h-screen flex-col items-center justify-center gap-16 px-14"
+    class="
+      flex min-h-screen flex-col items-center justify-start gap-16 px-6 py-20
+    "
   >
-    <div class="flex items-center gap-8">
-      <LoginForm @submit="handleFeedback" />
-      <RegisterForm @submit="handleFeedback" />
-    </div>
-    <Transition enter-from-class="transform-translate-x-[20px]" enter-to-class="transform-translate-x-[20px]">
-      <p
-        v-if="isAuthenticated !== null && showFeedback"
-        class="rounded-md border border-gray-900 p-2 text-lg font-semibold" :class="[isAuthenticated ? `
-          bg-green-500/10 text-green-500
-        ` : `bg-red-500/10 text-red-500`]"
-      >
-        {{ isAuthenticated ? 'Login succeeded!' : 'Login failed. Try again.' }}
-      </p>
-    </Transition>
-
-    <div class="flex flex-col gap-2">
-      <button
+    <div
+      class="
+        flex w-full max-w-6xl flex-col items-center justify-between gap-12
+        md:flex-row
+      "
+    >
+      <div class="text-lich-700 flex w-full flex-col gap-6 text-left">
+        <h1
+          class="
+            font-wdxl text-5xl leading-tight
+            md:text-7xl
+            lg:text-8xl
+          "
+        >
+          Simplify your online tabletop RPG sessions.
+        </h1>
+        <h2
+          class="
+            text-lich-500 text-2xl leading-snug
+            md:text-3xl
+            lg:text-4xl
+          "
+        >
+          Manage character sheets, maps, notes, and player stats — all in one place.
+        </h2>
+      </div>
+      <img
+        src="https://i.imgur.com/PiP7PgP.png"
+        alt="A lich holding a phylactery"
         class="
-          cursor-pointer rounded-sm bg-indigo-600 p-2 text-indigo-100 shadow
-          hover:bg-indigo-400
-        "
-        @click="handleHeartbeat"
-      >
-        Test JWT Token
-      </button>
-      <button
-        class="
-          cursor-pointer rounded-sm bg-red-600 p-2 text-red-100 shadow
-          hover:bg-red-400
-        "
-        @click="clearLocalStorage"
-      >
-        Clear JWT Token
-      </button>
-      <p
-        v-if="heartbeatMessage"
-        class="
-          rounded-md border border-gray-900 bg-gray-900/50 p-2 text-lg
-          font-semibold text-gray-100
+          w-72
+          md:w-80
+          lg:w-96
         "
       >
-        {{ heartbeatMessage }}
-      </p>
     </div>
   </main>
 </template>
-
-<script setup lang="ts">
-import { ref } from 'vue'
-import LoginForm from '@/components/forms/LoginForm.vue'
-import RegisterForm from '@/components/forms/RegisterForm.vue'
-import useAuth from '@/composables/useAuth'
-
-const { isAuthenticated, heartbeat } = useAuth()
-
-const showFeedback = ref(false)
-const heartbeatMessage = ref('Heartbeat not yet triggered')
-
-function handleFeedback() {
-  showFeedback.value = true
-  setTimeout(clearFeedback, 3000)
-}
-
-function clearFeedback() {
-  showFeedback.value = false
-}
-
-async function handleHeartbeat() {
-  const response = await heartbeat()
-  heartbeatMessage.value = response
-}
-
-function clearLocalStorage() {
-  localStorage.removeItem('jwtToken')
-}
-</script>

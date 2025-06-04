@@ -6,19 +6,19 @@
     <input
       id="email"
       v-model="form.email" required class="
-        w-full rounded-xs px-2 outline outline-offset-2 outline-indigo-200
+        w-full rounded-xs px-2 outline outline-offset-2 outline-moss-200
       " type="text" name="email" placeholder="E-mail"
     >
     <input
       id="password"
       v-model="form.password" required class="
-        w-full rounded-xs px-2 outline outline-offset-2 outline-indigo-200
+        w-full rounded-xs px-2 outline outline-offset-2 outline-moss-200
       " type="password" name="password" placeholder="Password"
     >
     <button
       class="
-        cursor-pointer rounded-sm bg-indigo-600 p-2 shadow
-        hover:bg-indigo-400 hover:text-indigo-100
+        cursor-pointer rounded-sm bg-moss-600 p-2 shadow
+        hover:bg-moss-400 hover:text-moss-100
       "
     >
       Login
