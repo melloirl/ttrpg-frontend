@@ -23,7 +23,7 @@
               lg:text-8xl
             "
           >
-            Simplify your online tabletop RPG sessions.
+            {{ t('home.hero') }}
           </h1>
           <h2
             class="
@@ -32,12 +32,12 @@
               lg:text-4xl
             "
           >
-            Manage character sheets, maps, notes, and player stats — all in one place.
+            {{ t('home.description') }}
           </h2>
         </div>
         <img
           :src="LichImage"
-          alt="A lich holding a phylactery"
+          :alt="t('home.alt')"
           class="
             w-72
             md:w-80
@@ -51,8 +51,10 @@
 
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, useTemplateRef } from 'vue'
+import { useI18n } from 'vue-i18n'
 import LichImage from '@/assets/illustrations/lich_philactery.png'
 
+const { t } = useI18n()
 const vantaRef = useTemplateRef('vantaRef')
 let vantaEffect: { destroy: () => void } | null = null
 

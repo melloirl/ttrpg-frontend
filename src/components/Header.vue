@@ -49,8 +49,12 @@
 
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { RouterLink } from 'vue-router'
 import Routes from '@/enums/routes'
+
+const { t } = useI18n()
 
 interface NavigationLinks {
   [key: string]: {
@@ -59,8 +63,8 @@ interface NavigationLinks {
   }
 }
 
-const navigationLinks: NavigationLinks = {
-  home: { name: Routes.HOME, label: 'Home' },
-  about: { name: Routes.ABOUT, label: 'About' },
-}
+const navigationLinks = computed<NavigationLinks>(() => ({
+  home: { name: Routes.HOME, label: t('home.title') },
+  about: { name: Routes.ABOUT, label: t('about.title') },
+}))
 </script>
