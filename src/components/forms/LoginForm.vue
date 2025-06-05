@@ -1,6 +1,6 @@
 <template>
   <Form @submit.prevent="handleLogin">
-    <h1 class="text-lg underline decoration-wavy underline-offset-4">
+    <h1 class="text-h-lg underline decoration-wavy underline-offset-4">
       Login
     </h1>
     <input

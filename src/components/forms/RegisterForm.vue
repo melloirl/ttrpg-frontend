@@ -1,6 +1,6 @@
 <template>
   <Form @submit.prevent="handleSubmit">
-    <h1 class="text-lg underline decoration-wavy underline-offset-4">
+    <h1 class="text-h-lg underline decoration-wavy underline-offset-4">
       Register
     </h1>
     <input

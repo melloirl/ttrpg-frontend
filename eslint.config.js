@@ -9,7 +9,7 @@ export default antfu(
   },
   {
     settings: {
-      entryPoint: './src/assets/main.css',
+      entryPoint: './src/assets/css/main.css',
     },
     plugins: {
       'readable-tailwind': eslintPluginReadableTailwind,

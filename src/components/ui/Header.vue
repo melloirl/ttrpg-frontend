@@ -18,8 +18,7 @@
             >
               Philactery
             </p>
-            <Icon
-              icon="game-icons:warlock-eye"
+            <IconWarlockEye
               class="text-lich-700"
               width="32"
               height="32"
@@ -32,7 +31,7 @@
         <nav>
           <ul
             v-if="Object.keys(navigationLinks).length > 0" class="
-              text-moss-400 flex items-center justify-center gap-4
+              flex items-center justify-center gap-4
             "
           >
             <li v-for="(link, key) in navigationLinks" :key="key">
@@ -56,10 +55,10 @@
 </template>
 
 <script setup lang="ts">
-import { Icon } from '@iconify/vue'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { RouterLink } from 'vue-router'
+import IconWarlockEye from '@/assets/icons/IconWarlockEye.svg'
 import Btn from '@/components/ui/Btn.vue'
 import LangPicker from '@/components/ui/LangPicker.vue'
 import { BTN_SIZE, BTN_VARIANT } from '@/enums/btn'

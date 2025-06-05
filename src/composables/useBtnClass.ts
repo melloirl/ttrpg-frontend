@@ -70,11 +70,11 @@ function transparentClass() {
 function sizeClass({ stretch, size }: IProps) {
   return [
     stretch ? 'w-full' : 'w-fit',
-    size === BTN_SIZE.LARGE ? 'px-[24px] h-[48px] text-[24px] font-bold' : '',
+    size === BTN_SIZE.LARGE ? 'px-[24px] h-[48px] text-b-lg font-bold' : '',
     size === BTN_SIZE.MEDIUM
-      ? 'px-[12px] h-[40px] text-[14px] font-bold'
+      ? 'px-[12px] h-[40px] text-b-md font-bold'
       : '',
-    size === BTN_SIZE.SMALL ? 'px-[10px] h-[32px] text-[12px] font-bold' : '',
+    size === BTN_SIZE.SMALL ? 'px-[10px] h-[32px] text-b-sm font-bold' : '',
   ]
 }
 
