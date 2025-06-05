@@ -1,0 +1,13 @@
+export enum BTN_VARIANT {
+  PRIMARY,
+  SECONDARY,
+  TERTIARY,
+  GREEN,
+  TRANSPARENT,
+}
+
+export enum BTN_SIZE {
+  SMALL,
+  MEDIUM,
+  LARGE,
+}

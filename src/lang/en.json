@@ -3,7 +3,8 @@
     "title": "Home",
     "hero": "Simplify your online tabletop RPG sessions.",
     "description": "Manage character sheets, maps, notes, and player stats — all in one place.",
-    "alt": "A lich holding a phylactery"
+    "alt": "A lich holding a phylactery",
+    "register": "Register"
   },
   "about": {
     "title": "About"

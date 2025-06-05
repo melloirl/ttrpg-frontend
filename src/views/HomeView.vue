@@ -45,6 +45,9 @@
           "
         >
       </div>
+      <Btn :size="BTN_SIZE.LARGE">
+        {{ t('home.register') }}
+      </Btn>
     </main>
   </div>
 </template>
@@ -53,6 +56,8 @@
 import { onBeforeUnmount, onMounted, useTemplateRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 import LichImage from '@/assets/illustrations/lich_philactery.png'
+import Btn from '@/components/ui/Btn.vue'
+import { BTN_SIZE } from '@/enums/btn'
 
 const { t } = useI18n()
 const vantaRef = useTemplateRef('vantaRef')

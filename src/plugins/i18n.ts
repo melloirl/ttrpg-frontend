@@ -4,7 +4,7 @@ import ptBR from '../lang/ptBR.json'
 
 const i18n = createI18n({
   legacy: false,
-  locale: 'ptBR',
+  locale: 'en',
   fallbackLocale: 'en',
   messages: {
     en,
