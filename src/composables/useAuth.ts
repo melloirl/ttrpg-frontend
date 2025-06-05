@@ -1,8 +1,8 @@
-import type { IPostLoginPayload } from '@/services/auth'
-import type { IPostRegisterPayload } from '@/services/user'
+import type { IPostLoginPayload } from '@/api/auth'
+import type { IPostRegisterPayload } from '@/api/user'
 import { ref } from 'vue'
-import { login } from '@/services/auth'
-import { register } from '@/services/user'
+import { login } from '@/api/auth'
+import { register } from '@/api/user'
 // Global value. This is shared between all composable calls.
 const isAuthenticated = ref<boolean | null>(null)
 

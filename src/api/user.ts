@@ -1,5 +1,5 @@
 import type { USER_ROLE } from '@/enums/user-role'
-import { ApiService } from '@/services/api'
+import { ApiService } from '@/api'
 
 const api = new ApiService('users')
 
