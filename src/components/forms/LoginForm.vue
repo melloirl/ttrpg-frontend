@@ -33,7 +33,7 @@ import useAuth from '@/composables/useAuth'
 
 const emit = defineEmits(['submit'])
 
-const { postLogin } = useAuth()
+const { tryLogin } = useAuth()
 
 const form = ref({
   email: '',
@@ -41,7 +41,7 @@ const form = ref({
 })
 
 async function handleLogin() {
-  await postLogin(form.value)
+  await tryLogin(form.value)
   emit('submit')
 }
 </script>

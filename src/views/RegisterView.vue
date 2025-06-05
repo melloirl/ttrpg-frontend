@@ -16,36 +16,6 @@
         {{ isAuthenticated ? 'Login succeeded!' : 'Login failed. Try again.' }}
       </p>
     </Transition>
-
-    <div class="flex flex-col gap-2">
-      <button
-        class="
-          bg-moss-600 text-moss-100 cursor-pointer rounded-sm p-2 shadow
-          hover:bg-moss-400
-        "
-        @click="handleHeartbeat"
-      >
-        Test JWT Token
-      </button>
-      <button
-        class="
-          cursor-pointer rounded-sm bg-red-600 p-2 text-red-100 shadow
-          hover:bg-red-400
-        "
-        @click="clearLocalStorage"
-      >
-        Clear JWT Token
-      </button>
-      <p
-        v-if="heartbeatMessage"
-        class="
-          rounded-md border border-gray-900 bg-gray-900/50 p-2 text-lg
-          font-semibold text-gray-100
-        "
-      >
-        {{ heartbeatMessage }}
-      </p>
-    </div>
   </main>
 </template>
 
@@ -55,10 +25,9 @@ import LoginForm from '@/components/forms/LoginForm.vue'
 import RegisterForm from '@/components/forms/RegisterForm.vue'
 import useAuth from '@/composables/useAuth'
 
-const { isAuthenticated, heartbeat } = useAuth()
+const { isAuthenticated } = useAuth()
 
 const showFeedback = ref(false)
-const heartbeatMessage = ref('Heartbeat not yet triggered')
 
 function handleFeedback() {
   showFeedback.value = true
@@ -67,14 +36,5 @@ function handleFeedback() {
 
 function clearFeedback() {
   showFeedback.value = false
-}
-
-async function handleHeartbeat() {
-  const response = await heartbeat()
-  heartbeatMessage.value = response
-}
-
-function clearLocalStorage() {
-  localStorage.removeItem('jwtToken')
 }
 </script>

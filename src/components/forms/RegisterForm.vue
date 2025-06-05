@@ -37,7 +37,7 @@ import { ref } from 'vue'
 import Form from '@/components/ui/Form.vue'
 import useAuth from '@/composables/useAuth'
 
-const { postRegister } = useAuth()
+const { tryRegister } = useAuth()
 
 const form = ref({
   email: '',
@@ -47,7 +47,7 @@ const form = ref({
 
 async function handleSubmit() {
   try {
-    await postRegister(form.value)
+    await tryRegister(form.value)
   }
   catch (error) {
     console.error('Registration failed:', error)
