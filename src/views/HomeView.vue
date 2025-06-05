@@ -15,10 +15,10 @@
           md:flex-row
         "
       >
-        <div class="text-lich-700 flex w-full flex-col gap-6 text-left">
+        <div class="flex w-full flex-col gap-6 text-left">
           <h1
             class="
-              font-wdxl text-5xl leading-tight
+              font-wdxl text-lich-700 text-5xl leading-tight
               md:text-7xl
               lg:text-8xl
             "
@@ -34,6 +34,11 @@
           >
             {{ t('home.description') }}
           </h2>
+          <RouterLink :to="{ name: Routes.REGISTER }">
+            <Btn :size="BTN_SIZE.LARGE" class="w-1/3">
+              {{ t('home.register') }}
+            </Btn>
+          </RouterLink>
         </div>
         <img
           :src="LichImage"
@@ -45,9 +50,6 @@
           "
         >
       </div>
-      <Btn :size="BTN_SIZE.LARGE">
-        {{ t('home.register') }}
-      </Btn>
     </main>
   </div>
 </template>
@@ -58,6 +60,7 @@ import { useI18n } from 'vue-i18n'
 import LichImage from '@/assets/illustrations/lich_philactery.png'
 import Btn from '@/components/ui/Btn.vue'
 import { BTN_SIZE } from '@/enums/btn'
+import Routes from '@/enums/routes'
 
 const { t } = useI18n()
 const vantaRef = useTemplateRef('vantaRef')

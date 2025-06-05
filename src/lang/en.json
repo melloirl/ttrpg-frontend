@@ -8,5 +8,9 @@
   },
   "about": {
     "title": "About"
+  },
+  "footer": {
+    "made": "Made with",
+    "by": "by"
   }
 }

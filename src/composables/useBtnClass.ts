@@ -48,33 +48,33 @@ function typeClass(props: IProps) {
 }
 
 function primaryClass() {
-  return 'bg-lich-600 text-white hover:bg-lich-500 hover:text-white active:bg-lich-500 active:text-white disabled:bg-moss-400 disabled:text-white disabled:opacity-50'
+  return 'bg-lich-700 text-lich-100 hover:bg-lich-500 hover:text-lich-100 active:bg-lich-500 active:text-lich-100 disabled:bg-moss-400 disabled:text-lich-100 disabled:opacity-50'
 }
 
 function secondaryClass() {
-  return 'bg-moss-400 text-white hover:bg-moss-300 hover:text-white active:bg-moss-300 active:text-white disabled:bg-moss-400 disabled:text-white disabled:opacity-50'
+  return 'border border-[2px] border-moss-400 text-moss-400 hover:bg-moss-300 hover:text-lich-100 active:bg-moss-300 active:text-lich-100 disabled:bg-moss-400 disabled:text-lich-100 disabled:opacity-50'
 }
 
 function tertiaryClass() {
-  return 'bg-moss-600 text-moss-200 hover:bg-moss-500 hover:text-white active:bg-moss-500 active:text-white disabled:bg-moss-600 disabled:text-white disabled:opacity-50'
+  return 'bg-moss-600 text-moss-200 hover:bg-moss-500 hover:text-lich-100 active:bg-moss-500 active:text-lich-100 disabled:bg-moss-600 disabled:text-lich-100 disabled:opacity-50'
 }
 
 function greenClass() {
-  return 'bg-green-600 text-moss-700 hover:bg-green-500 hover:text-moss-700 active:bg-green-500 active:text-moss-700 disabled:bg-moss-400 disabled:text-white disabled:opacity-50'
+  return 'bg-green-600 text-moss-700 hover:bg-green-500 hover:text-moss-700 active:bg-green-500 active:text-moss-700 disabled:bg-moss-400 disabled:text-lich-100 disabled:opacity-50'
 }
 
 function transparentClass() {
-  return 'text-moss-200 hover:text-white hover:bg-moss-600 active:text-white disabled:bg-transparent disabled:text-white disabled:opacity-50'
+  return 'text-moss-200 hover:text-lich-100 hover:bg-moss-600 active:text-lich-100 disabled:bg-transparent disabled:text-lich-100 disabled:opacity-50'
 }
 
 function sizeClass({ stretch, size }: IProps) {
   return [
-    stretch ? 'w-full' : '',
-    size === BTN_SIZE.LARGE ? 'px-[24px] h-[48px] text-b-lg font-bold' : '',
+    stretch ? 'w-full' : 'w-fit',
+    size === BTN_SIZE.LARGE ? 'px-[24px] h-[48px] text-[24px] font-bold' : '',
     size === BTN_SIZE.MEDIUM
-      ? 'px-[12px] h-[40px] text-b-md font-bold'
+      ? 'px-[12px] h-[40px] text-[14px] font-bold'
       : '',
-    size === BTN_SIZE.SMALL ? 'px-[10px] h-[32px] text-b-sm font-bold' : '',
+    size === BTN_SIZE.SMALL ? 'px-[10px] h-[32px] text-[12px] font-bold' : '',
   ]
 }
 

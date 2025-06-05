@@ -11,6 +11,9 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.1.7
         version: 4.1.7(vite@6.3.5(@types/node@22.15.23)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.8.0))
+      '@vueuse/core':
+        specifier: ^13.3.0
+        version: 13.3.0(vue@3.5.15(typescript@5.8.3))
       tailwind-merge:
         specifier: ^3.3.0
         version: 3.3.0
@@ -869,6 +872,9 @@ packages:
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
 
+  '@types/web-bluetooth@0.0.21':
+    resolution: {integrity: sha512-oIQLCGWtcFZy2JW77j9k8nHzAOpqMHLQejDA48XXMWH6tjCQHz5RCFz1bzsmROyL6PUm+LLnUiI4BCn221inxA==}
+
   '@types/webxr@0.5.22':
     resolution: {integrity: sha512-Vr6Stjv5jPRqH690f5I5GLjVk8GSsoQSYJ2FVd/3jJF7KaqfwPi3ehfBS96mlQ2kPCwZaX6U0rG2+NGHBKkA/A==}
 
@@ -1133,6 +1139,19 @@ packages:
         optional: true
       vue:
         optional: true
+
+  '@vueuse/core@13.3.0':
+    resolution: {integrity: sha512-uYRz5oEfebHCoRhK4moXFM3NSCd5vu2XMLOq/Riz5FdqZMy2RvBtazdtL3gEcmDyqkztDe9ZP/zymObMIbiYSg==}
+    peerDependencies:
+      vue: ^3.5.0
+
+  '@vueuse/metadata@13.3.0':
+    resolution: {integrity: sha512-42IzJIOYCKIb0Yjv1JfaKpx8JlCiTmtCWrPxt7Ja6Wzoq0h79+YVXmBV03N966KEmDEESTbp5R/qO3AB5BDnGw==}
+
+  '@vueuse/shared@13.3.0':
+    resolution: {integrity: sha512-L1QKsF0Eg9tiZSFXTgodYnu0Rsa2P0En2LuLrIs/jgrkyiDuJSsPZK+tx+wU0mMsYHUYEjNsuE41uqqkuR8VhA==}
+    peerDependencies:
+      vue: ^3.5.0
 
   '@webgpu/types@0.1.61':
     resolution: {integrity: sha512-w2HbBvH+qO19SB5pJOJFKs533CdZqxl3fcGonqL321VHkW7W/iBo6H8bjDy6pr/+pbMwIu5dnuaAxH7NxBqUrQ==}
@@ -3454,6 +3473,8 @@ snapshots:
 
   '@types/unist@3.0.3': {}
 
+  '@types/web-bluetooth@0.0.21': {}
+
   '@types/webxr@0.5.22': {}
 
   '@typescript-eslint/eslint-plugin@8.33.0(@typescript-eslint/parser@8.33.0(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.3)':
@@ -3772,6 +3793,19 @@ snapshots:
   '@vue/tsconfig@0.7.0(typescript@5.8.3)(vue@3.5.15(typescript@5.8.3))':
     optionalDependencies:
       typescript: 5.8.3
+      vue: 3.5.15(typescript@5.8.3)
+
+  '@vueuse/core@13.3.0(vue@3.5.15(typescript@5.8.3))':
+    dependencies:
+      '@types/web-bluetooth': 0.0.21
+      '@vueuse/metadata': 13.3.0
+      '@vueuse/shared': 13.3.0(vue@3.5.15(typescript@5.8.3))
+      vue: 3.5.15(typescript@5.8.3)
+
+  '@vueuse/metadata@13.3.0': {}
+
+  '@vueuse/shared@13.3.0(vue@3.5.15(typescript@5.8.3))':
+    dependencies:
       vue: 3.5.15(typescript@5.8.3)
 
   '@webgpu/types@0.1.61': {}

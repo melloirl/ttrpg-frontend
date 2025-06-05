@@ -30,4 +30,13 @@ html {
   --color-lich-800: oklch(57.96% 0.082 158.42);
   --color-lich-900: oklch(45.73% 0.063 158.22);
   --color-lich-950: oklch(36.06% 0.048 158.8);
+  --text-b-sm: 12px;
+  --text-b-md: 14px;
+  --text-b-lg: 24px;
+  --text-b-xl: 26px;
+}
+
+::selection {
+  color: var(--color-lich-200);
+  background: var(--color-lich-700);
 }

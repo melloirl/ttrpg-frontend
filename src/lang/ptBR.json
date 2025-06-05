@@ -8,5 +8,9 @@
   },
   "about": {
     "title": "Sobre"
+  },
+  "footer": {
+    "made": "Feito com",
+    "by": "por"
   }
 }
