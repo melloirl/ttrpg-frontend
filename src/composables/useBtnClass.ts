@@ -14,7 +14,7 @@ export default function useBtnClass(props: IProps) {
       typeClass(props),
       sizeClass(props),
       'flex flex-row items-center justify-center',
-      'rounded-[8px] py-8 transition-all relative',
+      'rounded-[8px] py-[8px] transition-all relative',
       'disabled:cursor-not-allowed',
       'cursor-pointer',
     ]
@@ -48,7 +48,7 @@ function typeClass(props: IProps) {
 }
 
 function primaryClass() {
-  return 'bg-lich-700 text-lich-100 hover:bg-lich-500 hover:text-lich-100 active:bg-lich-500 active:text-lich-100 disabled:bg-moss-400 disabled:text-lich-100 disabled:opacity-50'
+  return 'bg-lich-800 text-lich-100 hover:bg-lich-600 hover:text-lich-50 active:bg-lich-800 active:text-lich-100 disabled:bg-moss-400 disabled:text-lich-100 disabled:opacity-50'
 }
 
 function secondaryClass() {

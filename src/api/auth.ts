@@ -1,26 +1,41 @@
-import { ApiService } from '@/api'
+import type { USER_ROLE } from '@/enums/user-role'
+import { ApiResponse, ApiService } from '@/api'
+import { mockAuthData } from './mocks/auth.mock'
+
+const isMocking = Boolean(import.meta.env.VITE_MOCK_ENABLED) || true
 
 const api = new ApiService('auth')
 
-export interface IPostLoginPayload {
+interface UserData {
+  id: number
+  name: string
   email: string
-  password: string
+  role: USER_ROLE
 }
 
-export interface IPostLoginResponse {
-  error?: string
-  message: string
-  statusCode: number
-  token?: string
-}
+interface UserWithToken { user: UserData, token: string }
 
 export async function login(
-  payload: IPostLoginPayload,
-): Promise<string | undefined> {
-  const response = (await api.post(
-    'login',
-    payload,
-  )) as IPostLoginResponse
+  payload: { email: string, password: string },
+): Promise<UserWithToken> {
+  if (isMocking) {
+    await new Promise(resolve => setTimeout(resolve, 1000))
 
-  return response.token
+    const user = mockAuthData.users.find(
+      u => u.email === payload.email && u.password === payload.password,
+    )
+
+    if (user) {
+      const { password: _, ...userData } = user
+      return ApiResponse.ok<UserWithToken>({
+        user: userData,
+        token: mockAuthData.generateToken(user.id),
+      }).data
+    }
+
+    ApiResponse.fail('Invalid credentials.', 'USER_INVALID_CREDENTIALS')
+  }
+
+  const response = await api.post('login', payload)
+  return response as UserWithToken
 }

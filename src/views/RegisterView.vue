@@ -4,7 +4,6 @@
   >
     <div class="flex items-center gap-8">
       <LoginForm @submit="handleFeedback" />
-      <RegisterForm @submit="handleFeedback" />
     </div>
     <Transition enter-from-class="transform-translate-x-[20px]" enter-to-class="transform-translate-x-[20px]">
       <p
@@ -22,7 +21,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import LoginForm from '@/components/forms/LoginForm.vue'
-import RegisterForm from '@/components/forms/RegisterForm.vue'
 import useAuth from '@/composables/useAuth'
 
 const { isAuthenticated } = useAuth()

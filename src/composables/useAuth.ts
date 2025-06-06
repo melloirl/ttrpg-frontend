@@ -1,5 +1,3 @@
-import type { IPostLoginPayload } from '@/api/auth'
-import type { IPostRegisterPayload } from '@/api/user'
 import { ref } from 'vue'
 import { login } from '@/api/auth'
 import { register } from '@/api/user'
@@ -7,16 +5,16 @@ import { register } from '@/api/user'
 const isAuthenticated = ref<boolean | null>(null)
 
 export default function useAuth() {
-  async function tryLogin(payload: IPostLoginPayload) {
+  async function tryLogin(payload: { email: string, password: string }) {
     try {
-      const token = await login({
+      const response = await login({
         email: payload.email,
         password: payload.password,
       })
 
-      if (token) {
+      if (response) {
         isAuthenticated.value = true
-        localStorage.setItem('jwtToken', token)
+        localStorage.setItem('jwtToken', response.token)
       }
       else {
         isAuthenticated.value = false
@@ -28,7 +26,7 @@ export default function useAuth() {
     }
   }
 
-  async function tryRegister(payload: IPostRegisterPayload) {
+  async function tryRegister(payload: { email: string, password: string, name: string }) {
     await register(payload)
   }
   return { tryLogin, tryRegister, isAuthenticated }

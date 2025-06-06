@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=WDXL+Lubrifont+TC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&family=WDXL+Lubrifont+TC&display=swap');
 @import "tailwindcss";
 
 html {
@@ -8,6 +8,7 @@ html {
 @theme {
   --font-wdxl: "WDXL Lubrifont TC", sans-serif;
   --font-nunito: "Nunito", sans-serif;
+  --font-raleway: "Raleway", sans-serif;
 
   --color-moss-50: oklch(95.73% 0.006 153.77);
   --color-moss-100: oklch(91.85% 0.009 161.34);
@@ -66,28 +67,28 @@ html {
 
   .text-h-sm {
     font-size: var(--b-sm);
-    font-family: var(--font-wdxl);
+    font-family: var(--font-raleway);
     font-weight: 600;
     line-height: 1rem;
   }
 
   .text-h-md {
     font-size: var(--b-md);
-    font-family: var(--font-wdxl);
+    font-family: var(--font-raleway);
     font-weight: 600;
     line-height: 1.25rem;
   }
 
   .text-h-lg {
     font-size: var(--b-lg);
-    font-family: var(--font-wdxl);
+    font-family: var(--font-raleway);
     font-weight: 700;
     line-height: 2rem;
   }
 
   .text-h-xl {
     font-size: var(--b-xl);
-    font-family: var(--font-wdxl);
+    font-family: var(--font-raleway);
     font-weight: 800;
     line-height: 2rem;
   }

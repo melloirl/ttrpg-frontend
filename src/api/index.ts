@@ -141,3 +141,50 @@ export class ApiService {
     return response.data
   }
 }
+
+export class ApiErrorMessage extends Error {
+  readonly success = false
+  readonly error: string
+  readonly statusCode: number
+  readonly data: null = null
+
+  constructor(message: string, error: string, statusCode = 400) {
+    super(message)
+    this.name = 'ApiError'
+    this.error = error
+    this.statusCode = statusCode
+  }
+}
+
+export class ApiResponse<T = unknown> {
+  success: boolean
+  message: string
+  data: T
+  error?: string
+
+  private constructor({
+    success,
+    message,
+    data,
+    error,
+  }: {
+    success: boolean
+    message: string
+    data: T
+    error?: string
+  }) {
+    this.success = success
+    this.message = message
+    this.data = data
+    if (error)
+      this.error = error
+  }
+
+  static ok<T>(data: T, message = 'Success'): ApiResponse<T> {
+    return new ApiResponse<T>({ success: true, message, data })
+  }
+
+  static fail(message = 'An error occurred', error = 'UNKNOWN_ERROR', statusCode = 400): never {
+    throw new ApiErrorMessage(message, error, statusCode)
+  }
+}
