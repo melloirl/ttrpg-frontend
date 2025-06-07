@@ -38,6 +38,12 @@ html {
   --b-md: 0.875rem;
   --b-lg: 1.5rem;
   --b-xl: 1.625rem;
+
+  --h-sm: 1.125rem;
+  --h-md: 1.5rem;
+  --h-lg: 2rem;
+  --h-xl: 2.5rem;
+  --h-xxl: 3.25rem;
 }
 
 @layer components {
@@ -66,31 +72,44 @@ html {
   }
 
   .text-h-sm {
-    font-size: var(--b-sm);
+    font-size: var(--h-sm);
     font-family: var(--font-raleway);
     font-weight: 600;
     line-height: 1rem;
   }
 
   .text-h-md {
-    font-size: var(--b-md);
+    font-size: var(--h-md);
     font-family: var(--font-raleway);
     font-weight: 600;
     line-height: 1.25rem;
   }
 
   .text-h-lg {
-    font-size: var(--b-lg);
+    font-size: var(--h-lg);
     font-family: var(--font-raleway);
     font-weight: 700;
     line-height: 2rem;
   }
 
   .text-h-xl {
-    font-size: var(--b-xl);
+    font-size: var(--h-xl);
     font-family: var(--font-raleway);
     font-weight: 800;
     line-height: 2rem;
+  }
+
+  .text-h-2xl {
+    font-size: var(--h-xxl);
+    font-family: var(--font-raleway);
+    font-weight: 800;
+    line-height: 3.5rem;
+  }
+
+  .text-h-8xl {
+    font-size: 6rem;
+    font-family: var(--font-raleway);
+    font-weight: 800;
   }
 }
 

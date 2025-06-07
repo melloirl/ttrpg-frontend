@@ -4,28 +4,29 @@
       id="email"
       v-model="form.email" required class="
         outline-moss-200 w-full rounded-[4px] px-2 outline outline-offset-2
-      " type="text" placeholder="E-mail"
+      " type="text" :placeholder="t('form.login.title')"
     >
     <input
       id="password"
       v-model="form.password" required class="
         outline-moss-200 w-full rounded-[4px] px-2 outline outline-offset-2
-      " type="password" placeholder="Password"
+      " type="password" :placeholder="t('form.login.password')"
     >
     <Btn stretch class="text-h-md">
-      Login
+      {{ t('ui.buttons.submit') }}
     </Btn>
   </Form>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import Btn from '@/components/ui/Btn.vue'
 import Form from '@/components/ui/Form.vue'
 import useAuth from '@/composables/useAuth'
 
 const emit = defineEmits(['submit'])
-
+const { t } = useI18n()
 const { tryLogin } = useAuth()
 
 const form = ref({

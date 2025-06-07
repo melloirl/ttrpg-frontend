@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-moss-950/50 fixed inset-x-0 top-0 z-50 border-b border-white/10"
+    class="bg-moss-950/50 border-lich-50/10 fixed inset-x-0 top-0 z-50 border-b"
   >
     <div
       class="
@@ -28,10 +28,10 @@
       </div>
       <div class="flex items-center justify-center gap-2">
         <LangPicker />
-        <nav>
+        <nav id="header-nav" class="relative">
           <ul
             v-if="Object.keys(navigationLinks).length > 0" class="
-              flex items-center justify-center gap-4
+              ml-2 flex items-center justify-center gap-4
             "
           >
             <li v-for="(link, key) in navigationLinks" :key="key">
@@ -78,3 +78,16 @@ const navigationLinks = computed<NavigationLinks>(() => ({
   // about: { name: Routes.ABOUT, label: t('about.title') },
 }))
 </script>
+
+<style scoped>
+#header-nav::after {
+  content: "";
+  background: var(--color-moss-800);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 60%;
+  width: 1px;
+  transform: translateY(-50%);
+}
+</style>

@@ -12,5 +12,34 @@
   "footer": {
     "made": "Feito com",
     "by": "por"
+  },
+  "join": {
+    "title": "Junte-se a nós",
+    "subtitle": "Crie sua conta gratuita e desbloqueie ferramentas que tornam suas campanhas de RPG mais fáceis, ricas e imersivas.",
+    "perks": {
+      "character": "Crie e gerencie fichas de personagem com facilidade",
+      "maps": "Envie e compartilhe mapas interativos com marcadores",
+      "notes": "Organize anotações e enredos da campanha",
+      "stats": "Acompanhe estatísticas dos jogadores, PVs e PMs em tempo real",
+      "collab": "Colabore em tempo real com jogadores e co-mestres"
+    }
+  },
+  "form": {
+    "register": {
+      "title": "Registrar-se",
+      "username": "Usuário",
+      "email": "E-mail",
+      "password": "Senha"
+    },
+    "login": {
+      "title": "Login",
+      "email": "Usuário",
+      "password": "Senha"
+    }
+  },
+  "ui": {
+    "buttons": {
+      "submit": "Enviar"
+    }
   }
 }

@@ -12,5 +12,34 @@
   "footer": {
     "made": "Made with",
     "by": "by"
+  },
+  "join": {
+    "title": "Join Us",
+    "subtitle": "Create your free account and unlock tools that make your RPG campaigns easier, richer, and more immersive.",
+    "perks": {
+      "character": "Build and manage character sheets effortlessly",
+      "maps": "Upload and share interactive maps with tokens and markers",
+      "notes": "Keep campaign notes and storylines neatly organized",
+      "stats": "Track player stats, HP, and MP with live updates",
+      "collab": "Collaborate in real time with players and co-DMs"
+    }
+  },
+  "form": {
+    "register": {
+      "title": "Register",
+      "username": "Username",
+      "email": "E-mail",
+      "password": "Password"
+    },
+    "login": {
+      "title": "Login",
+      "email": "E-mail",
+      "password": "Password"
+    }
+  },
+  "ui": {
+    "buttons": {
+      "submit": "Submit"
+    }
   }
 }

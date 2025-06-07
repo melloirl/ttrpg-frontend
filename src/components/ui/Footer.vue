@@ -1,8 +1,8 @@
 <template>
   <footer
     class="
-      bg-moss-950/50 inset-x-0 z-50 flex h-[48px] items-center justify-end
-      border-t border-white/10 p-8
+      bg-moss-950/50 border-lich-50/10 inset-x-0 z-50 flex h-[48px] items-center
+      justify-end border-t p-8
     "
   >
     <h1 class="text-lich-400">
