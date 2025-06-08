@@ -40,7 +40,7 @@
           </li>
         </ul>
       </aside>
-      <RegisterForm />
+      <RegisterForm class="self-center" />
     </div>
   </main>
 </template>
