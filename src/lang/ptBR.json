@@ -15,13 +15,13 @@
   },
   "join": {
     "title": "Junte-se a nós",
-    "subtitle": "Crie sua conta gratuita e desbloqueie ferramentas que tornam suas campanhas de RPG mais fáceis, ricas e imersivas.",
+    "subtitle": "Você poderá...",
     "perks": {
-      "character": "Crie e gerencie fichas de personagem com facilidade",
-      "maps": "Envie e compartilhe mapas interativos com marcadores",
-      "notes": "Organize anotações e enredos da campanha",
-      "stats": "Acompanhe estatísticas dos jogadores, PVs e PMs em tempo real",
-      "collab": "Colabore em tempo real com jogadores e co-mestres"
+      "character": "Criar e gerenciar fichas de personagem",
+      "maps": "Enviar mapas interativos com marcadores",
+      "notes": "Organizar anotações e enredos da campanha",
+      "stats": "Acompanhar estatísticas dos jogadores, PVs e PMs em tempo real",
+      "collab": "Colaborar em tempo real com jogadores e co-mestres"
     }
   },
   "form": {
@@ -42,7 +42,8 @@
       "submit": "Enviar",
       "open": "Abrir",
       "close": "Fechar",
-      "ok": "Ok"
+      "ok": "Ok",
+      "create": "Criar Conta"
     }
   }
 }

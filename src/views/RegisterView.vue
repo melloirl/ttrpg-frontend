@@ -2,7 +2,7 @@
   <main
     class="
       bg-moss-950 text-lich-50 flex min-h-screen flex-col items-center
-      justify-center px-6 py-16
+      justify-center px-6 pb-16
     "
   >
     <div
@@ -13,10 +13,16 @@
     >
       <aside
         class="
-          flex max-w-xl flex-col gap-6
+          relative flex max-w-xl flex-col gap-6 overflow-hidden
           md:gap-10
         "
       >
+        <IconWarlockEye
+          class="
+            text-lich-600 pointer-events-none absolute bottom-0 left-1/2 size-96
+            -translate-x-1/2 opacity-10
+          "
+        />
         <h1
           class="
             font-wdxl text-lich-700 text-5xl leading-tight
@@ -29,14 +35,14 @@
         <p class="text-h-lg text-lich-300">
           {{ t('join.subtitle') }}
         </p>
-        <ul class="flex flex-col gap-4">
+        <ul class="relative z-10 flex flex-col gap-4">
           <li
             v-for="(item, index) in listItems"
             :key="index"
             class="text-b-xl flex items-start gap-3"
           >
-            <IconCandleSkull class="text-lich-500 mt-1 size-5 shrink-0" />
-            <span>{{ t(item) }}</span>
+            <Icon :icon="item.icon" class="text-lich-500 mt-1 size-5 shrink-0" />
+            <span>{{ t(item.key) }}</span>
           </li>
         </ul>
       </aside>
@@ -46,17 +52,33 @@
 </template>
 
 <script setup lang="ts">
+import { Icon } from '@iconify/vue'
 import { useI18n } from 'vue-i18n'
-import IconCandleSkull from '@/assets/icons/IconCandleSkull.svg'
+import IconWarlockEye from '@/assets/icons/IconWarlockEye.svg'
 import RegisterForm from '@/components/forms/RegisterForm.vue'
 
 const { t } = useI18n()
 
 const listItems = [
-  'join.perks.character',
-  'join.perks.maps',
-  'join.perks.notes',
-  'join.perks.stats',
-  'join.perks.collab',
+  {
+    key: 'join.perks.character',
+    icon: 'ph:scroll',
+  },
+  {
+    key: 'join.perks.maps',
+    icon: 'ph:globe-stand',
+  },
+  {
+    key: 'join.perks.notes',
+    icon: 'ph:archive',
+  },
+  {
+    key: 'join.perks.stats',
+    icon: 'ph:heart',
+  },
+  {
+    key: 'join.perks.collab',
+    icon: 'ph:handshake',
+  },
 ]
 </script>

@@ -21,7 +21,7 @@ const emits = defineEmits<{
   (e: 'update:modelValue', payload: string | number): void
 }>()
 
-const baseClass = 'outline-moss-200 w-full rounded-xs px-2 outline outline-offset-2'
+const baseClass = 'outline-moss-200 w-full rounded-xs px-2 outline outline-offset-2 focus:outline-lich-600 focus:outline-2'
 
 const modelValue = useVModel(props, 'modelValue', emits, {
   passive: true,

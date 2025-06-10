@@ -35,7 +35,9 @@
             {{ t('home.description') }}
           </h2>
           <RouterLink :to="{ name: Routes.REGISTER }">
-            <Btn :size="BTN_SIZE.LARGE" class="w-1/3">
+            <Btn
+              :size="BTN_SIZE.LARGE" class="w-1/3"
+            >
               {{ t('home.register') }}
             </Btn>
           </RouterLink>
