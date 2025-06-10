@@ -4,6 +4,7 @@
     :open="isOpen"
     class="bg-moss-900 text-moss-200 m-auto rounded-[8px] border-2 px-8 py-4"
     @close="isOpen = false"
+    @click="handleClick"
   >
     <slot />
   </dialog>
@@ -23,6 +24,20 @@ function showModal() {
 function closeModal() {
   isOpen.value = false
   dialogRef.value?.close()
+}
+
+function handleClick(event: MouseEvent) {
+  const dimensions = dialogRef.value?.getBoundingClientRect()
+  if (!dimensions)
+    return
+  if (
+    event.clientX < dimensions.left
+    || event.clientX > dimensions.right
+    || event.clientY < dimensions.top
+    || event.clientY > dimensions.bottom
+  ) {
+    closeModal()
+  }
 }
 
 watch(isOpen, (val) => {
