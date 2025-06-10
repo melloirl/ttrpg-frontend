@@ -39,7 +39,10 @@
   },
   "ui": {
     "buttons": {
-      "submit": "Enviar"
+      "submit": "Enviar",
+      "open": "Abrir",
+      "close": "Fechar",
+      "ok": "Ok"
     }
   }
 }

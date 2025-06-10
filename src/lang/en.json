@@ -39,7 +39,10 @@
   },
   "ui": {
     "buttons": {
-      "submit": "Submit"
+      "submit": "Submit",
+      "open": "Open",
+      "close": "Close",
+      "ok": "Ok"
     }
   }
 }
